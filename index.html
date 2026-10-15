@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>채움 119 · 나의 진로 9단계</title>
+<style>
+:root{
+  --paper:#EFEAE0;
+  --paper-dark:#E2DACB;
+  --ink:#1F3A5F;
+  --ink-dark:#16283F;
+  --stamp:#B23A2E;
+  --card:#FBF9F4;
+  --line:#C9BFA8;
+  --text:#232323;
+  --muted:#6b6559;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--paper);
+  color:var(--text);
+  font-family:"Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;
+  line-height:1.55;
+  min-height:100vh;
+}
+.stage{
+  max-width:820px;
+  margin:0 auto;
+  padding:28px 20px 80px;
+}
+
+/* ---- 공통 헤더 ---- */
+.masthead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 18px;
+  background:var(--ink);
+  color:#fff;
+  border-radius:6px;
+  margin-bottom:18px;
+}
+.masthead .brand{
+  font-weight:800;
+  letter-spacing:.02em;
+  font-size:15px;
+}
+.masthead .who{
+  font-size:13px;
+  opacity:.85;
+}
+
+/* ---- 9단계 채움 진행 바 ---- */
+.progress{
+  display:flex;
+  gap:4px;
+  margin-bottom:6px;
+}
+.stamp-dot{
+  flex:1;
+  height:36px;
+  border:2px solid var(--line);
+  border-radius:4px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  font-weight:700;
+  color:var(--muted);
+  background:var(--card);
+  position:relative;
+}
+.stamp-dot.done{
+  border-color:var(--stamp);
+  color:var(--stamp);
+  background:#fbeeec;
+}
+.stamp-dot.current{
+  border-color:var(--ink);
+  color:var(--ink);
+  background:#fff;
+  box-shadow:0 0 0 2px var(--ink) inset;
+}
+.progress-labels{
+  display:flex;
+  justify-content:space-between;
+  font-size:11px;
+  color:var(--muted);
+  margin-bottom:22px;
+  padding:0 2px;
+}
+
+/* ---- 카드 ---- */
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:26px 26px 22px;
+  margin-bottom:18px;
+}
+.chapter-title{
+  font-size:22px;
+  font-weight:800;
+  color:var(--ink-dark);
+  margin:0 0 4px;
+}
+.chapter-sub{
+  font-size:13px;
+  color:var(--muted);
+  margin:0 0 20px;
+}
+.step-block{
+  border-top:1px dashed var(--line);
+  padding-top:18px;
+  margin-top:18px;
+}
+.step-block:first-of-type{
+  border-top:none;
+  padding-top:0;
+  margin-top:0;
+}
+.step-tag{
+  display:inline-block;
+  font-size:12px;
+  font-weight:800;
+  color:#fff;
+  background:var(--stamp);
+  padding:3px 9px;
+  border-radius:3px;
+  margin-bottom:8px;
+  letter-spacing:.02em;
+}
+.step-heading{
+  font-size:17px;
+  font-weight:800;
+  margin:0 0 4px;
+  color:var(--text);
+}
+.step-desc{
+  font-size:13.5px;
+  color:var(--muted);
+  margin:0 0 14px;
+}
+
+label.field{
+  display:block;
+  font-size:13.5px;
+  font-weight:700;
+  margin:14px 0 6px;
+  color:var(--text);
+}
+input[type=text],textarea,select{
+  width:100%;
+  font-family:inherit;
+  font-size:14.5px;
+  padding:10px 12px;
+  border:1.5px solid var(--line);
+  border-radius:5px;
+  background:#fff;
+  color:var(--text);
+}
+input[type=text]:focus,textarea:focus,select:focus{
+  outline:2px solid var(--ink);
+  outline-offset:1px;
+  border-color:var(--ink);
+}
+textarea{resize:vertical;min-height:64px;}
+
+.chip-group{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+.chip{
+  border:1.5px solid var(--line);
+  background:#fff;
+  border-radius:20px;
+  padding:7px 14px;
+  font-size:13px;
+  cursor:pointer;
+  user-select:none;
+}
+.chip.on{
+  background:var(--ink);
+  border-color:var(--ink);
+  color:#fff;
+  font-weight:700;
+}
+
+.nav-row{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  margin-top:8px;
+}
+button{
+  font-family:inherit;
+  font-size:14.5px;
+  font-weight:700;
+  padding:12px 22px;
+  border-radius:6px;
+  border:none;
+  cursor:pointer;
+}
+.btn-primary{background:var(--ink);color:#fff;}
+.btn-primary:hover{background:var(--ink-dark);}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink);}
+.btn-ghost:hover{background:#fff;}
+.btn-stamp{background:var(--stamp);color:#fff;}
+.btn-stamp:hover{background:#8f2c22;}
+
+.hidden{display:none !important;}
+
+/* ---- 커버 화면 ---- */
+.cover{
+  background:var(--ink);
+  color:#fff;
+  border-radius:8px;
+  padding:40px 34px;
+  text-align:center;
+  margin-bottom:20px;
+}
+.cover .gauge{
+  display:flex;
+  gap:4px;
+  max-width:280px;
+  margin:0 auto 18px;
+}
+.cover .gauge span{
+  flex:1;
+  height:10px;
+  border-radius:2px;
+  border:1.5px solid #5a7290;
+  background:transparent;
+}
+.cover .gauge span.fill{
+  background:var(--stamp);
+  border-color:var(--stamp);
+}
+.cover h1{
+  font-size:30px;
+  margin:0 0 10px;
+  letter-spacing:.01em;
+  font-weight:800;
+}
+.cover p{
+  font-size:14px;
+  color:#cfd8e3;
+  margin:0 0 24px;
+}
+.cover-form{
+  max-width:360px;
+  margin:0 auto;
+  text-align:left;
+}
+.cover-form label{
+  display:block;font-size:12.5px;color:#cfd8e3;margin:12px 0 5px;font-weight:700;
+}
+.cover-form input{
+  width:100%;padding:10px 12px;border-radius:5px;border:none;font-size:14px;
+}
+.cover-note{
+  font-size:12px;
+  color:var(--muted);
+  text-align:center;
+}
+
+/* ---- 리포트 화면 ---- */
+.report-frame{
+  border:2px solid var(--ink);
+  border-radius:10px;
+  padding:4px;
+}
+.report-frame-inner{
+  border:1px solid var(--line);
+  border-radius:7px;
+  padding:22px 26px 26px;
+}
+.report-head{
+  text-align:center;
+  padding:6px 0 16px;
+  border-bottom:3px solid var(--ink);
+  margin-bottom:22px;
+  position:relative;
+}
+.report-id{
+  position:absolute;
+  top:0; right:0;
+  font-size:10.5px;
+  color:var(--muted);
+  font-family:monospace;
+}
+.report-seal{
+  width:52px;height:52px;
+  margin:0 auto 8px;
+  border-radius:50%;
+  border:2.5px solid var(--stamp);
+  color:var(--stamp);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:13px;
+  letter-spacing:-.5px;
+}
+.report-head h1{font-size:23px;margin:0 0 6px;color:var(--ink-dark);}
+.report-meta{font-size:12.5px;color:var(--muted);}
+.report-sub{font-size:11.5px;color:var(--stamp);font-weight:700;margin-top:4px;letter-spacing:.03em;}
+
+.timeline{
+  display:grid;
+  grid-template-columns:repeat(9,1fr);
+  gap:6px;
+  margin:20px 0 8px;
+}
+.tl-node{
+  text-align:center;
+}
+.tl-circle{
+  width:34px;height:34px;
+  margin:0 auto 4px;
+  border-radius:50%;
+  border:2px solid var(--stamp);
+  color:var(--stamp);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:13px;
+  background:#fbeeec;
+}
+.tl-label{font-size:10px;color:var(--muted);}
+
+.report-section{margin:22px 0;}
+.report-section h2{
+  font-size:14.5px;
+  color:var(--ink-dark);
+  margin:0 0 10px;
+  display:flex;align-items:center;gap:8px;
+}
+.report-section h2 .sec-ico{
+  width:24px;height:24px;border-radius:50%;
+  background:var(--ink);color:#fff;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:800;flex:none;
+}
+.report-item{
+  font-size:13.5px;
+  margin-bottom:8px;
+  padding-bottom:8px;
+  border-bottom:1px dotted var(--line);
+}
+.report-item b{color:var(--text);}
+.report-item .empty{color:#b3ab99;font-style:normal;}
+
+/* ---- 분석 대시보드(레이더차트 + 막대) ---- */
+.dash-wrap{
+  display:grid;
+  grid-template-columns:230px 1fr;
+  gap:22px;
+  align-items:center;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 22px;
+}
+.dash-title{
+  font-size:12px;font-weight:800;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.06em;
+  margin-bottom:10px;
+}
+.hbar-row{margin-bottom:12px;}
+.hbar-label{
+  display:flex;justify-content:space-between;
+  font-size:12.5px;font-weight:700;color:var(--text);margin-bottom:4px;
+}
+.hbar-label span:last-child{color:var(--stamp);font-family:monospace;}
+.hbar-track{
+  width:100%;height:10px;border-radius:5px;
+  background:var(--paper-dark);
+  border:1px solid var(--line);
+  overflow:hidden;
+}
+.hbar-fill{height:100%;background:var(--stamp);}
+
+.fillbar-wrap{margin:0 0 4px;}
+.fillbar-label{
+  display:flex;justify-content:space-between;
+  font-size:13px;font-weight:700;color:var(--ink-dark);margin-bottom:6px;
+}
+.fillbar-track{
+  width:100%;height:14px;border-radius:7px;
+  background:var(--paper-dark);
+  border:1px solid var(--line);
+  overflow:hidden;
+}
+.fillbar-fill{
+  height:100%;
+  background:var(--stamp);
+  width:0%;
+}
+.keyword-wrap{margin:20px 0 6px;}
+.keyword-wrap .chip{cursor:default;}
+
+.print-bar{
+  display:flex;gap:10px;justify-content:center;margin-top:26px;
+}
+
+
+/* ---- 포트폴리오 프롬프트 ---- */
+.prompt-card{margin-top:22px;}
+.prompt-card h2{font-size:17px;margin:0 0 6px;color:var(--ink-dark);}
+.prompt-desc{font-size:13px;color:var(--muted);margin:0 0 14px;line-height:1.6;}
+.prompt-steps{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px;}
+.prompt-steps span{font-size:12px;font-weight:700;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:14px;padding:5px 11px;}
+#prompt-text{
+  width:100%;min-height:360px;resize:vertical;
+  font-family:inherit;font-size:13px;line-height:1.65;
+  padding:14px 16px;border:1.5px solid var(--line);border-radius:6px;background:#fff;color:var(--text);
+}
+.prompt-actions{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap;}
+.copy-msg{font-size:13px;font-weight:700;color:var(--ink);}
+.prompt-warn{font-size:12px;color:var(--muted);margin-top:12px;line-height:1.6;}
+
+@media print{
+  body{background:#fff;}
+  .masthead,.progress,.progress-labels,.print-bar,.nav-row,.prompt-card{display:none !important;}
+  .card{border:none;}
+  .card.report-frame{border:2px solid var(--ink) !important;}
+  .stage{max-width:100%;padding:0;}
+}
+
+@media (max-width:600px){
+  .timeline{grid-template-columns:repeat(3,1fr);}
+  .card{padding:18px;}
+  .dash-wrap{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="stage">
+
+  <!-- ========== 커버 ========== -->
+  <section id="screen-cover">
+    <div class="cover">
+      <div class="gauge">
+        <span class="fill"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <h1>채움 119</h1>
+      <p>채울수록 커지는 내일 — 1학년 1년의 진로 설계를, 4번의 시간으로 채웁니다.</p>
+      <div class="cover-form">
+        <label>이름</label>
+        <input type="text" id="in-name" placeholder="예: 김한페">
+        <label>학교</label>
+        <input type="text" id="in-school" placeholder="예: 주산산업고">
+        <label>학과 / 학년-반</label>
+        <input type="text" id="in-dept" placeholder="예: 조경과 1-2">
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <button class="btn-primary" onclick="startApp()">채움 시작하기</button>
+    </div>
+    <p class="cover-note" style="margin-top:14px;">같은 이름으로 다시 들어오면 이전에 쓴 내용을 이어서 볼 수 있어요.</p>
+  </section>
+
+  <!-- ========== 앱 본체 (커버 이후 표시) ========== -->
+  <div id="app-body" class="hidden">
+
+    <div class="masthead">
+      <div class="brand">채움 119</div>
+      <div class="who" id="who-line"></div>
+    </div>
+
+    <div class="progress" id="progress-dots"></div>
+    <div class="progress-labels">
+      <span>1차시</span><span>2차시</span><span>3차시</span><span>4차시</span>
+    </div>
+    <p style="text-align:center;font-size:12px;color:var(--muted);margin:0 0 20px;">워크시트를 보면서 옮겨 적으세요 · 입력 중 자동으로 저장됩니다</p>
+
+    <!-- 1차시 -->
+    <section class="card chapter" id="chapter-1">
+      <div class="chapter-title">1차시 · 학교알기 + 나를 알기</div>
+      <div class="chapter-sub">알아보기 단계 · 1~2단계</div>
+
+      <div class="step-block">
+        <span class="step-tag">1단계 · 학교알기</span>
+        <h3 class="step-heading">학교교육과정과 성장경로 알아보기</h3>
+        <p class="step-desc">우리 학교에서 무엇을 배울 수 있는지 확인하고, 관심 있는 것을 적어보세요.</p>
+
+        <label class="field">배우고 싶은 과목</label>
+        <input type="text" data-k="s1_subject" placeholder="예: 조경설계, 식품가공">
+
+        <label class="field">수강하고 싶은 방과후 프로그램</label>
+        <input type="text" data-k="s1_afterschool" placeholder="예: 드론 자격증반">
+
+        <label class="field">취득하고 싶은 자격증</label>
+        <input type="text" data-k="s1_cert" placeholder="예: 조경기능사">
+
+        <label class="field">우리 학교 자랑거리 한 가지</label>
+        <textarea data-k="s1_pride" placeholder="예: 실습실 기자재가 최신이라 취업 실습에 유리하다"></textarea>
+      </div>
+
+      <div class="step-block">
+        <span class="step-tag">2단계 · 나를 알기</span>
+        <h3 class="step-heading">진로 탐색을 통한 '나' 객관적으로 보기</h3>
+        <p class="step-desc">해당하는 흥미 유형을 골라보세요. 여러 개 골라도 됩니다.</p>
+
+        <label class="field">나의 흥미 유형 (복수 선택 가능)</label>
+        <div class="chip-group" id="s2-riasec"></div>
+
+        <label class="field">나의 강점 (2~3가지)</label>
+        <input type="text" data-k="s2_strength" placeholder="예: 손재주가 좋음, 꼼꼼함, 협업을 잘함">
+
+        <label class="field">요즘 진로에 대해 하는 고민</label>
+        <textarea data-k="s2_worry" placeholder="예: 적성에 맞는 직무를 아직 못 찾았다"></textarea>
+      </div>
+
+      <div class="nav-row">
+        <span></span>
+        <button class="btn-primary" onclick="goChapter(2)">다음</button>
+      </div>
+    </section>
+
+    <!-- 2차시 -->
+    <section class="card chapter hidden" id="chapter-2">
+      <div class="chapter-title">2차시 · 기업 알기 + 기술 찾기</div>
+      <div class="chapter-sub">찾아보기 단계 · 3~4단계</div>
+
+      <div class="step-block">
+        <span class="step-tag">3단계 · 기업알기</span>
+        <h3 class="step-heading">직업 세계와 미래 사회 인재상 알아보기</h3>
+        <p class="step-desc">관심 있는 기업 하나를 조사해보세요.</p>
+
+        <label class="field">관심 산업분야</label>
+        <select data-k="s3_industry">
+          <option value="">선택하세요</option>
+          <option>제조</option><option>IT·전자</option><option>식품</option>
+          <option>보건의료</option><option>디자인·미디어</option>
+          <option>유통·서비스</option><option>농수산</option><option>기타</option>
+        </select>
+
+        <label class="field">조사한 기업명</label>
+        <input type="text" data-k="s3_company" placeholder="예: OO조경">
+
+        <label class="field">그 기업이 원하는 인재상</label>
+        <textarea data-k="s3_talent" placeholder="예: 성실하고 책임감 있는 사람, 협업 능력"></textarea>
+      </div>
+
+      <div class="step-block">
+        <span class="step-tag">4단계 · 기술찾기</span>
+        <h3 class="step-heading">산업기술 분야에 따른 학업 설계하기</h3>
+        <p class="step-desc">배우고 싶은 기술과 체험하고 싶은 미래 기술을 골라보세요.</p>
+
+        <label class="field">배우고 싶은 기술 · 교과군 (복수 선택)</label>
+        <div class="chip-group" id="s4-skills"></div>
+
+        <label class="field">체험하고 싶은 미래기술 (복수 선택)</label>
+        <div class="chip-group" id="s4-future"></div>
+      </div>
+
+      <div class="nav-row">
+        <button class="btn-ghost" onclick="goChapter(1)">이전</button>
+        <button class="btn-primary" onclick="goChapter(3)">다음</button>
+      </div>
+    </section>
+
+    <!-- 3차시 -->
+    <section class="card chapter hidden" id="chapter-3">
+      <div class="chapter-title">3차시 · 기업 찾기 + 준비하기</div>
+      <div class="chapter-sub">찾아보기 단계 · 5~6단계</div>
+
+      <div class="step-block">
+        <span class="step-tag">5단계 · 기업찾기</span>
+        <h3 class="step-heading">나의 적성과 인재상을 고려한 기업 찾기</h3>
+        <p class="step-desc">목표 기업 3곳과 그 이유를 적어보세요. "나만의 기업 백과서"입니다.</p>
+
+        <label class="field">목표기업 1</label>
+        <input type="text" data-k="s5_c1" placeholder="기업명">
+        <label class="field">선택 이유</label>
+        <input type="text" data-k="s5_r1" placeholder="예: 내가 배운 기술을 바로 쓸 수 있어서">
+
+        <label class="field">목표기업 2</label>
+        <input type="text" data-k="s5_c2" placeholder="기업명">
+        <label class="field">선택 이유</label>
+        <input type="text" data-k="s5_r2" placeholder="선택 이유">
+
+        <label class="field">목표기업 3</label>
+        <input type="text" data-k="s5_c3" placeholder="기업명">
+        <label class="field">선택 이유</label>
+        <input type="text" data-k="s5_r3" placeholder="선택 이유">
+      </div>
+
+      <div class="step-block">
+        <span class="step-tag">6단계 · 준비하기</span>
+        <h3 class="step-heading">목표 직무와 기업맞춤형 취업 설계하기</h3>
+
+        <label class="field">목표 직무에 필요한 자격증 · 직무기술</label>
+        <input type="text" data-k="s6_need" placeholder="예: 조경기능사, 조경설계 프로그램 활용능력">
+
+        <label class="field">앞으로 3년간 교육과정 계획 메모</label>
+        <textarea data-k="s6_plan" placeholder="예: 1학년-기초이론, 2학년-실습·자격증, 3학년-현장실습"></textarea>
+      </div>
+
+      <div class="nav-row">
+        <button class="btn-ghost" onclick="goChapter(2)">이전</button>
+        <button class="btn-primary" onclick="goChapter(4)">다음</button>
+      </div>
+    </section>
+
+    <!-- 4차시 -->
+    <section class="card chapter hidden" id="chapter-4">
+      <div class="chapter-title">4차시 · 전문기술배우기 + 기업탐방 + 채움·키움</div>
+      <div class="chapter-sub">해보기 단계 · 7~9단계</div>
+
+      <div class="step-block">
+        <span class="step-tag">7단계 · 전문기술배우기</span>
+        <h3 class="step-heading">맞춤형 전공 기술 배우기</h3>
+
+        <label class="field">참여하고 싶은 동아리 · 방과후 프로그램</label>
+        <input type="text" data-k="s7_activity" placeholder="예: 로봇 동아리">
+
+        <label class="field">자격증 취득 계획 (무엇을, 언제까지)</label>
+        <input type="text" data-k="s7_cert_plan" placeholder="예: 2학년 1학기까지 전기기능사 취득">
+      </div>
+
+      <div class="step-block">
+        <span class="step-tag">8단계 · 기업탐방하기</span>
+        <h3 class="step-heading">현장 체험을 통한 기업 알아보기</h3>
+
+        <label class="field">가보고 싶은 기업 · 현장</label>
+        <input type="text" data-k="s8_visit" placeholder="기업명 또는 현장명">
+
+        <label class="field">탐방을 통해 확인하고 싶은 것</label>
+        <textarea data-k="s8_check" placeholder="예: 현직자가 실제로 하는 업무가 내가 생각한 것과 같은지"></textarea>
+      </div>
+
+      <div class="step-block">
+        <span class="step-tag">9단계 · 채움+키움</span>
+        <h3 class="step-heading">'나 성장'을 통한 자존감 향상과 비전 키우기</h3>
+
+        <label class="field">1년 뒤 나의 변화를 한 줄로 다짐한다면</label>
+        <input type="text" data-k="s9_vow" placeholder="예: 목표 기업에 필요한 자격증 2개를 딴다">
+
+        <label class="field">자존감을 키우기 위해 해보고 싶은 것</label>
+        <input type="text" data-k="s9_esteem" placeholder="예: 매주 한 번 나를 칭찬하는 일기 쓰기">
+
+        <label class="field">4차시를 마치며 드는 소감</label>
+        <textarea data-k="s9_feeling" placeholder="자유롭게 적어보세요"></textarea>
+      </div>
+
+      <div class="nav-row">
+        <button class="btn-ghost" onclick="goChapter(3)">이전</button>
+        <button class="btn-stamp" onclick="showReport()">채움 완료 · 리포트 보기</button>
+      </div>
+    </section>
+
+    <!-- 리포트 -->
+    <section class="hidden" id="screen-report">
+      <div class="card report-frame" style="padding:0;overflow:visible;">
+        <div class="report-frame-inner">
+          <div class="report-head">
+            <div class="report-id" id="report-id"></div>
+            <div class="report-seal">채움<br>119</div>
+            <h1>나의 채움 119 리포트</h1>
+            <div class="report-meta" id="report-meta"></div>
+            <div class="report-sub">CAREER DESIGN REPORT · 9단계 진로설계 결과보고</div>
+          </div>
+
+          <div class="timeline" id="report-timeline"></div>
+
+          <div class="dash-wrap">
+            <div id="radar-chart"></div>
+            <div>
+              <div class="dash-title">활동 데이터 분석</div>
+              <div id="report-bars"></div>
+            </div>
+          </div>
+
+          <div class="fillbar-wrap">
+            <div class="fillbar-label">
+              <span>채움 완성도</span>
+              <span id="fillbar-pct">0%</span>
+            </div>
+            <div class="fillbar-track"><div class="fillbar-fill" id="fillbar-fill"></div></div>
+          </div>
+
+          <div class="keyword-wrap">
+            <div class="fillbar-label"><span>나의 관심 키워드</span></div>
+            <div class="chip-group" id="report-keywords"></div>
+          </div>
+
+          <div class="report-section">
+            <h2><span class="sec-ico">1</span>1차시 · 학교알기 + 나를 알기</h2>
+            <div id="rep-1"></div>
+          </div>
+          <div class="report-section">
+            <h2><span class="sec-ico">2</span>2차시 · 기업 알기 + 기술 찾기</h2>
+            <div id="rep-2"></div>
+          </div>
+          <div class="report-section">
+            <h2><span class="sec-ico">3</span>3차시 · 기업 찾기 + 준비하기</h2>
+            <div id="rep-3"></div>
+          </div>
+          <div class="report-section">
+            <h2><span class="sec-ico">4</span>4차시 · 전문기술배우기 + 기업탐방 + 채움·키움</h2>
+            <div id="rep-4"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card prompt-card">
+        <h2>나만의 채움 119 포트폴리오 만들기</h2>
+        <p class="prompt-desc">아래 프롬프트에는 내가 워크시트에 적은 내용이 모두 들어 있어요. 복사해서 ChatGPT나 뤼튼에 붙여넣으면 나만의 포트폴리오 초안을 받을 수 있어요.</p>
+        <div class="prompt-steps"><span>① 복사하기</span><span>② ChatGPT 또는 뤼튼 열기</span><span>③ 붙여넣고 보내기</span><span>④ 내용 확인하고 내 말로 고치기</span></div>
+        <textarea id="prompt-text" spellcheck="false"></textarea>
+        <div class="prompt-actions">
+          <button class="btn-stamp" onclick="copyPrompt()">프롬프트 복사하기</button>
+          <span class="copy-msg" id="copy-msg"></span>
+        </div>
+        <p class="prompt-warn">AI가 써준 내용은 틀리거나 부풀려질 수 있어요. 내가 적지 않은 내용이 들어갔다면 지우고, 자격증·기업 정보는 큐넷·워크넷 등 공식 사이트로 한 번 더 확인해요. 마지막에는 꼭 내 말투로 고쳐 쓰세요.</p>
+      </div>
+
+      <div class="print-bar">
+        <button class="btn-ghost" onclick="goChapter(4)">4차시로 돌아가기</button>
+        <button class="btn-primary" onclick="window.print()">인쇄 · PDF로 저장</button>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script>
+const RIASEC = ["현실형(손으로 만드는 것)","탐구형(분석하고 연구하는 것)","예술형(창작하는 것)","사회형(사람을 돕는 것)","기업형(이끌고 설득하는 것)","관습형(정리하고 관리하는 것)"];
+const SKILLS = ["프로그래밍","전기전자","기계설계","조리제과","디자인편집","보건간호","회계사무","농업생명","기타"];
+const FUTURE = ["스마트팩토리","드론","AI","로봇","신재생에너지","기타"];
+
+let state = { chips:{ s2_riasec:[], s4_skills:[], s4_future:[] } };
+let storageKey = "";
+
+function buildChips(containerId, list, stateKey){
+  const box = document.getElementById(containerId);
+  box.innerHTML = "";
+  list.forEach(v=>{
+    const c = document.createElement("div");
+    c.className = "chip";
+    c.textContent = v;
+    c.onclick = ()=>{
+      const arr = state.chips[stateKey];
+      const idx = arr.indexOf(v);
+      if(idx>-1){ arr.splice(idx,1); c.classList.remove("on"); }
+      else{ arr.push(v); c.classList.add("on"); }
+      saveState();
+    };
+    box.appendChild(c);
+  });
+}
+
+function startApp(){
+  const name = document.getElementById("in-name").value.trim();
+  const school = document.getElementById("in-school").value.trim();
+  const dept = document.getElementById("in-dept").value.trim();
+  if(!name){ alert("이름을 입력해 주세요."); return; }
+
+  storageKey = "career9_" + name;
+  const saved = localStorage.getItem(storageKey);
+  if(saved){
+    state = JSON.parse(saved);
+  } else {
+    state = { name, school, dept, chips:{ s2_riasec:[], s4_skills:[], s4_future:[] } };
+  }
+  state.name = name; state.school = school; state.dept = dept;
+
+  document.getElementById("screen-cover").classList.add("hidden");
+  document.getElementById("app-body").classList.remove("hidden");
+  document.getElementById("who-line").textContent = [name, school, dept].filter(Boolean).join(" · ");
+
+  buildChips("s2-riasec", RIASEC, "s2_riasec");
+  buildChips("s4-skills", SKILLS, "s4_skills");
+  buildChips("s4-future", FUTURE, "s4_future");
+
+  // 저장된 값 채우기
+  document.querySelectorAll("[data-k]").forEach(el=>{
+    const k = el.getAttribute("data-k");
+    if(state[k] !== undefined) el.value = state[k];
+    el.addEventListener("input", ()=>{ state[k]=el.value; saveState(); });
+    el.addEventListener("change", ()=>{ state[k]=el.value; saveState(); });
+  });
+  applyChipState("s2-riasec", state.chips.s2_riasec);
+  applyChipState("s4-skills", state.chips.s4_skills);
+  applyChipState("s4-future", state.chips.s4_future);
+
+  renderProgress(1);
+}
+
+function applyChipState(containerId, arr){
+  document.querySelectorAll("#"+containerId+" .chip").forEach(c=>{
+    if(arr.includes(c.textContent)) c.classList.add("on");
+  });
+}
+
+function saveState(){
+  if(storageKey) localStorage.setItem(storageKey, JSON.stringify(state));
+}
+
+let currentChapter = 1;
+function goChapter(n){
+  document.querySelectorAll(".chapter").forEach(el=>el.classList.add("hidden"));
+  document.getElementById("screen-report").classList.add("hidden");
+  document.getElementById("chapter-"+n).classList.remove("hidden");
+  currentChapter = n;
+  renderProgress(n);
+  window.scrollTo(0,0);
+}
+
+function renderProgress(chapterNum){
+  const box = document.getElementById("progress-dots");
+  box.innerHTML = "";
+  const chapterOf = i => i<=2?1:(i<=4?2:(i<=6?3:4));
+  for(let i=1;i<=9;i++){
+    const d = document.createElement("div");
+    d.className = "stamp-dot";
+    d.textContent = i;
+    if(chapterOf(i) < chapterNum) d.classList.add("done");
+    if(chapterOf(i) === chapterNum) d.classList.add("current");
+    box.appendChild(d);
+  }
+}
+
+function fmt(v, placeholder){
+  if(!v || !String(v).trim()) return '<span class="empty">'+ (placeholder||"작성하지 않음") +'</span>';
+  return v;
+}
+
+function buildRadarSVG(selected){
+  const labels = RIASEC.map(t => t.split("(")[0]);
+  const n = labels.length;
+  const cx = 130, cy = 122, R = 66;
+  const angle = i => -Math.PI/2 + i * (2*Math.PI/n);
+
+  const grid = [0.33, 0.66, 1].map(l => {
+    const pts = labels.map((_, i) => {
+      const a = angle(i), r = R * l;
+      return (cx + r*Math.cos(a)).toFixed(1) + "," + (cy + r*Math.sin(a)).toFixed(1);
+    }).join(" ");
+    return `<polygon points="${pts}" fill="none" stroke="#DCD4C0" stroke-width="1"/>`;
+  }).join("");
+
+  const axes = labels.map((_, i) => {
+    const a = angle(i), x = cx + R*Math.cos(a), y = cy + R*Math.sin(a);
+    return `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#DCD4C0" stroke-width="1"/>`;
+  }).join("");
+
+  const values = RIASEC.map(t => selected.includes(t) ? 1 : 0.2);
+  const dataPts = values.map((v, i) => {
+    const a = angle(i), r = R * v;
+    return (cx + r*Math.cos(a)).toFixed(1) + "," + (cy + r*Math.sin(a)).toFixed(1);
+  }).join(" ");
+
+  const dots = values.map((v, i) => {
+    const a = angle(i), r = R * v;
+    const on = v === 1;
+    return `<circle cx="${(cx+r*Math.cos(a)).toFixed(1)}" cy="${(cy+r*Math.sin(a)).toFixed(1)}" r="${on?4:2.5}" fill="${on?"#B23A2E":"#C9BFA8"}"/>`;
+  }).join("");
+
+  const labelEls = labels.map((lab, i) => {
+    const a = angle(i), lr = R + 30;
+    const x = cx + lr*Math.cos(a), y = cy + lr*Math.sin(a);
+    const cosv = Math.cos(a);
+    const anchor = Math.abs(cosv) < 0.3 ? "middle" : (cosv > 0 ? "start" : "end");
+    const on = selected.includes(RIASEC[i]);
+    return `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" font-size="11" fill="${on?"#B23A2E":"#6b6559"}" text-anchor="${anchor}" dominant-baseline="middle" font-weight="${on?800:600}">${lab}</text>`;
+  }).join("");
+
+  return `<svg viewBox="0 0 260 244" style="width:100%;height:auto;max-width:250px;display:block;margin:0 auto;">
+    ${grid}${axes}
+    <polygon points="${dataPts}" fill="#B23A2E" fill-opacity="0.22" stroke="#B23A2E" stroke-width="2"/>
+    ${dots}${labelEls}
+  </svg>`;
+}
+
+function buildBars(){
+  const goals = [state.s5_c1, state.s5_c2, state.s5_c3].filter(v=>v && v.trim()).length;
+  const rows = [
+    ["나의 흥미 유형", state.chips.s2_riasec.length, 6],
+    ["목표기업 수", goals, 3],
+    ["배우고 싶은 기술", state.chips.s4_skills.length, 9],
+    ["체험 희망 미래기술", state.chips.s4_future.length, 6],
+  ];
+  return rows.map(([label, val, max]) => {
+    const pct = Math.round((val/max)*100);
+    return `<div class="hbar-row">
+      <div class="hbar-label"><span>${label}</span><span>${val} / ${max}</span></div>
+      <div class="hbar-track"><div class="hbar-fill" style="width:${pct}%"></div></div>
+    </div>`;
+  }).join("");
+}
+
+
+function pv(v){ return (v && String(v).trim()) ? String(v).trim() : "(작성하지 않음)"; }
+
+function buildPortfolioPrompt(){
+  const goals = [1,2,3].map(i => {
+    const c = state["s5_c"+i], r = state["s5_r"+i];
+    return (c && c.trim()) ? `${i}. ${c.trim()} — 선택 이유: ${pv(r)}` : null;
+  }).filter(Boolean);
+  const who = [state.name, state.school, state.dept].filter(Boolean).join(" / ");
+  return `너는 직업계고 1학년 학생의 진로 포트폴리오 작성을 돕는 선배 멘토야.
+아래는 내가 '채움 119 진로설계' 수업(4차시)에서 워크시트에 직접 적은 내용이야. 이 내용만 바탕으로 '나만의 채움 119 포트폴리오' 초안을 만들어줘.
+
+[규칙]
+- 내가 적지 않은 내용은 지어내지 말고, 비어 있으면 '아직 정하지 않음'이라고 표시해줘.
+- 고등학생이 쓴 글처럼 쉽고 담백한 말투로, 과장하거나 꾸미는 표현은 빼줘.
+- 전체 분량은 A4 1~2장 정도로 해줘.
+- 마지막에는 내가 직접 고쳐 써야 할 부분 3가지를 알려줘.
+
+[포트폴리오 구성]
+1. 나를 소개합니다 (이름, 학교·학과, 한 줄 소개)
+2. 나의 흥미와 강점
+3. 내가 관심 있는 산업과 기업
+4. 나의 목표기업 3곳과 이유
+5. 3년 동안의 준비 계획 (자격증, 동아리·방과후, 학년별 계획)
+6. 기업탐방 계획
+7. 1년 뒤 나의 다짐
+
+[내가 적은 내용]
+■ 기본 정보: ${who || "(작성하지 않음)"}
+
+■ 1단계 학교알기
+- 배우고 싶은 과목: ${pv(state.s1_subject)}
+- 방과후 프로그램: ${pv(state.s1_afterschool)}
+- 취득하고 싶은 자격증: ${pv(state.s1_cert)}
+- 우리 학교 자랑거리: ${pv(state.s1_pride)}
+
+■ 2단계 나를 알기
+- 나의 흥미 유형: ${state.chips.s2_riasec.length ? state.chips.s2_riasec.join(", ") : "(작성하지 않음)"}
+- 나의 강점: ${pv(state.s2_strength)}
+- 요즘 진로 고민: ${pv(state.s2_worry)}
+
+■ 3단계 기업알기
+- 관심 산업분야: ${pv(state.s3_industry)}
+- 조사한 기업: ${pv(state.s3_company)}
+- 그 기업의 인재상: ${pv(state.s3_talent)}
+
+■ 4단계 기술찾기
+- 배우고 싶은 기술·교과군: ${state.chips.s4_skills.length ? state.chips.s4_skills.join(", ") : "(작성하지 않음)"}
+- 체험하고 싶은 미래기술: ${state.chips.s4_future.length ? state.chips.s4_future.join(", ") : "(작성하지 않음)"}
+
+■ 5단계 기업찾기 (목표기업)
+${goals.length ? goals.join("\n") : "(작성하지 않음)"}
+
+■ 6단계 준비하기
+- 필요한 자격증·직무기술: ${pv(state.s6_need)}
+- 3개년 교육과정 계획: ${pv(state.s6_plan)}
+
+■ 7단계 전문기술배우기
+- 참여하고 싶은 동아리·방과후: ${pv(state.s7_activity)}
+- 자격증 취득 계획: ${pv(state.s7_cert_plan)}
+
+■ 8단계 기업탐방하기
+- 가보고 싶은 기업·현장: ${pv(state.s8_visit)}
+- 탐방에서 확인하고 싶은 것: ${pv(state.s8_check)}
+
+■ 9단계 채움+키움
+- 1년 뒤 나의 다짐: ${pv(state.s9_vow)}
+- 자존감을 키우기 위한 실천: ${pv(state.s9_esteem)}
+- 수업을 마친 소감: ${pv(state.s9_feeling)}`;
+}
+
+function copyPrompt(){
+  const ta = document.getElementById("prompt-text");
+  const msg = document.getElementById("copy-msg");
+  ta.focus(); ta.select();
+  let ok = false;
+  try { ok = document.execCommand("copy"); } catch(e){ ok = false; }
+  if(!ok && navigator.clipboard){
+    navigator.clipboard.writeText(ta.value).then(()=>{ msg.textContent = "복사됐어요! AI 채팅창에 붙여넣으세요."; }).catch(()=>{ msg.textContent = "복사가 안 되면 글상자를 눌러 전체 선택(Ctrl+A) 후 복사하세요."; });
+    return;
+  }
+  msg.textContent = ok ? "복사됐어요! AI 채팅창에 붙여넣으세요." : "복사가 안 되면 글상자를 눌러 전체 선택(Ctrl+A) 후 복사하세요.";
+}
+
+function showReport(){
+  document.querySelectorAll(".chapter").forEach(el=>el.classList.add("hidden"));
+  document.getElementById("screen-report").classList.remove("hidden");
+  window.scrollTo(0,0);
+
+  document.getElementById("report-meta").textContent =
+    [state.name, state.school, state.dept].filter(Boolean).join(" · ") + " · " + new Date().toLocaleDateString("ko-KR");
+
+  // 타임라인
+  const tl = document.getElementById("report-timeline");
+  const labels = ["학교알기","나를알기","기업알기","기술찾기","기업찾기","준비하기","기술배우기","기업탐방","채움키움"];
+  tl.innerHTML = "";
+  labels.forEach((l,i)=>{
+    const node = document.createElement("div");
+    node.className = "tl-node";
+    node.innerHTML = '<div class="tl-circle">'+(i+1)+'</div><div class="tl-label">'+l+'</div>';
+    tl.appendChild(node);
+  });
+
+  document.getElementById("report-id").textContent =
+    "REPORT NO. " + new Date().toISOString().slice(0,10).replace(/-/g,"");
+
+  // 통계 대시보드: 레이더차트 + 막대
+  document.getElementById("radar-chart").innerHTML = buildRadarSVG(state.chips.s2_riasec);
+  document.getElementById("report-bars").innerHTML = buildBars();
+
+  // 채움 완성도
+  const textKeys = ["s1_subject","s1_afterschool","s1_cert","s1_pride","s2_strength","s2_worry",
+    "s3_industry","s3_company","s3_talent","s5_c1","s5_r1","s5_c2","s5_r2","s5_c3","s5_r3",
+    "s6_need","s6_plan","s7_activity","s7_cert_plan","s8_visit","s8_check","s9_vow","s9_esteem","s9_feeling"];
+  const filledText = textKeys.filter(k => state[k] && String(state[k]).trim()).length;
+  const chipTotal = state.chips.s2_riasec.length + state.chips.s4_skills.length + state.chips.s4_future.length;
+  const filledCount = filledText + (chipTotal > 0 ? Math.min(chipTotal,3) : 0);
+  const totalCount = textKeys.length + 3;
+  const pct = Math.round((filledCount / totalCount) * 100);
+  document.getElementById("fillbar-fill").style.width = pct + "%";
+  document.getElementById("fillbar-pct").textContent = pct + "%";
+
+  // 관심 키워드 클라우드
+  const kwBox = document.getElementById("report-keywords");
+  const keywords = [
+    ...state.chips.s2_riasec, ...state.chips.s4_skills, ...state.chips.s4_future,
+    state.s3_industry, state.s3_company
+  ].filter(v => v && String(v).trim());
+  kwBox.innerHTML = keywords.length
+    ? keywords.map(k => `<div class="chip on">${k}</div>`).join("")
+    : '<span class="empty">아직 선택·작성된 키워드가 없습니다</span>';
+
+  document.getElementById("rep-1").innerHTML = `
+    <div class="report-item"><b>배우고 싶은 과목</b> — ${fmt(state.s1_subject)}</div>
+    <div class="report-item"><b>방과후 프로그램</b> — ${fmt(state.s1_afterschool)}</div>
+    <div class="report-item"><b>취득 희망 자격증</b> — ${fmt(state.s1_cert)}</div>
+    <div class="report-item"><b>학교 자랑거리</b> — ${fmt(state.s1_pride)}</div>
+    <div class="report-item"><b>나의 흥미 유형</b> — ${fmt(state.chips.s2_riasec.join(", "))}</div>
+    <div class="report-item"><b>나의 강점</b> — ${fmt(state.s2_strength)}</div>
+    <div class="report-item"><b>진로 고민</b> — ${fmt(state.s2_worry)}</div>
+  `;
+  document.getElementById("rep-2").innerHTML = `
+    <div class="report-item"><b>관심 산업분야</b> — ${fmt(state.s3_industry)}</div>
+    <div class="report-item"><b>조사한 기업</b> — ${fmt(state.s3_company)}</div>
+    <div class="report-item"><b>그 기업의 인재상</b> — ${fmt(state.s3_talent)}</div>
+    <div class="report-item"><b>배우고 싶은 기술</b> — ${fmt(state.chips.s4_skills.join(", "))}</div>
+    <div class="report-item"><b>체험하고 싶은 미래기술</b> — ${fmt(state.chips.s4_future.join(", "))}</div>
+  `;
+  document.getElementById("rep-3").innerHTML = `
+    <div class="report-item"><b>목표기업 1</b> — ${fmt(state.s5_c1)} (${fmt(state.s5_r1,"이유 미작성")})</div>
+    <div class="report-item"><b>목표기업 2</b> — ${fmt(state.s5_c2)} (${fmt(state.s5_r2,"이유 미작성")})</div>
+    <div class="report-item"><b>목표기업 3</b> — ${fmt(state.s5_c3)} (${fmt(state.s5_r3,"이유 미작성")})</div>
+    <div class="report-item"><b>필요 자격증·직무기술</b> — ${fmt(state.s6_need)}</div>
+    <div class="report-item"><b>3개년 교육과정 계획</b> — ${fmt(state.s6_plan)}</div>
+  `;
+  document.getElementById("rep-4").innerHTML = `
+    <div class="report-item"><b>참여 희망 동아리·방과후</b> — ${fmt(state.s7_activity)}</div>
+    <div class="report-item"><b>자격증 취득 계획</b> — ${fmt(state.s7_cert_plan)}</div>
+    <div class="report-item"><b>가보고 싶은 기업·현장</b> — ${fmt(state.s8_visit)}</div>
+    <div class="report-item"><b>탐방으로 확인하고 싶은 것</b> — ${fmt(state.s8_check)}</div>
+    <div class="report-item"><b>1년 뒤 다짐</b> — ${fmt(state.s9_vow)}</div>
+    <div class="report-item"><b>자존감을 위한 실천</b> — ${fmt(state.s9_esteem)}</div>
+    <div class="report-item"><b>소감</b> — ${fmt(state.s9_feeling)}</div>
+  `;
+  document.getElementById("prompt-text").value = buildPortfolioPrompt();
+  document.getElementById("copy-msg").textContent = "";
+}
+</script>
+</body>
+</html>
