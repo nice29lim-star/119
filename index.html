@@ -348,7 +348,7 @@ button{
 /* ---- 분석 대시보드(레이더차트 + 막대) ---- */
 .dash-wrap{
   display:grid;
-  grid-template-columns:230px 1fr;
+  grid-template-columns:330px 1fr;
   gap:22px;
   align-items:center;
   background:var(--card);
@@ -404,6 +404,61 @@ button{
 .etc-wrap{margin-top:10px;}
 .etc-wrap input{border-color:var(--ink);}
 
+
+.hint{font-weight:400;font-size:12px;color:var(--muted);margin-left:6px;}
+.rs-row{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff;border:1.5px solid var(--line);border-radius:6px;padding:9px 12px;margin-bottom:8px;}
+.rs-name b{font-size:14px;color:var(--text);}
+.rs-name b i{font-style:normal;font-family:monospace;font-size:12px;color:var(--stamp);margin-left:4px;}
+.rs-name span{display:block;font-size:12px;color:var(--muted);margin-top:1px;}
+.rs-input{width:92px;flex:none;text-align:center;font-size:18px;font-weight:800;padding:8px 6px;}
+.radar-preview{margin-top:14px;background:#fff;border:1px dashed var(--ink);border-radius:8px;padding:14px 10px 10px;text-align:center;}
+.rp-title{font-size:12px;font-weight:800;color:var(--muted);letter-spacing:.04em;margin-bottom:4px;}
+.rs-code{font-size:13px;font-weight:800;color:var(--stamp);margin-top:6px;line-height:1.5;}
+.rs-code small{display:block;color:var(--muted);font-weight:500;font-size:11.5px;}
+.img-preview{margin-top:20px;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;}
+.img-preview img{max-width:100%;border:1px solid var(--line);border-radius:6px;}
+.img-preview p{font-size:13px;color:var(--muted);margin:0 0 10px;line-height:1.6;}
+
+
+.hol-go{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin:2px 0 8px;}
+/* ---- 메인 / 홈 / 홀랜드 검사 ---- */
+.mast-right{display:flex;align-items:center;gap:12px;}
+.btn-home{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.7);padding:6px 14px;font-size:13px;border-radius:5px;}
+.btn-home:hover{background:rgba(255,255,255,.14);}
+.home-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px;}
+.home-card{text-align:left;background:var(--card);color:var(--text);border:2px solid var(--ink);border-radius:10px;padding:26px 24px;display:flex;flex-direction:column;gap:10px;cursor:pointer;transition:transform .12s;font-weight:400;}
+.home-card:hover{transform:translateY(-3px);background:#fff;}
+.hc-step{font-family:monospace;font-size:12px;font-weight:800;color:var(--stamp);letter-spacing:.08em;}
+.home-card b{font-size:22px;color:var(--ink-dark);}
+.hc-desc{font-size:13.5px;color:var(--muted);line-height:1.65;}
+.hc-go{margin-top:auto;font-weight:800;color:var(--ink);font-size:14px;padding-top:8px;}
+.t-bar{height:10px;background:var(--paper-dark);border:1px solid var(--line);border-radius:5px;overflow:hidden;margin:8px 0 6px;}
+.t-bar-fill{height:100%;background:var(--stamp);width:0%;}
+.t-meta{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-bottom:14px;}
+.q-card{background:#fff;border:1.5px solid var(--line);border-radius:8px;padding:14px 16px;margin-bottom:12px;}
+.q-card.done{border-color:var(--ink);}
+.q-text{font-size:14.5px;font-weight:700;line-height:1.55;margin-bottom:10px;}
+.q-text i{font-style:normal;color:var(--stamp);font-family:monospace;margin-right:6px;}
+.q-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.q-opt{background:var(--card);color:var(--ink);border:1.5px solid var(--line);padding:11px 6px;font-size:13.5px;font-weight:700;border-radius:6px;}
+.q-opt small{display:block;font-weight:400;font-size:11px;color:var(--muted);margin-top:2px;}
+.q-opt.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+.q-opt.on small{color:#cfd8e3;}
+.t-nav{display:flex;justify-content:space-between;gap:10px;margin-top:10px;}
+.t-nav button:disabled{opacity:.4;cursor:not-allowed;}
+.hol-frame{background:var(--card);}
+.type-card{background:#fff;border:1px solid var(--line);border-left:5px solid var(--stamp);border-radius:6px;padding:14px 16px;margin-bottom:10px;}
+.type-card h3{margin:0 0 4px;font-size:16px;color:var(--ink-dark);}
+.type-card h3 em{font-style:normal;color:var(--stamp);font-family:monospace;margin-left:6px;}
+.type-card p{margin:0 0 8px;font-size:13px;line-height:1.6;}
+.type-card .kw{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
+.type-card .kw span{font-size:11.5px;font-weight:700;color:var(--ink);background:var(--paper);border-radius:12px;padding:3px 9px;}
+.type-card ul{margin:0;padding-left:18px;font-size:12.5px;line-height:1.75;color:var(--muted);}
+.type-card ul b{color:var(--text);}
+.hol-note{font-size:12px;color:var(--muted);line-height:1.7;margin-top:14px;padding-top:12px;border-top:1px dotted var(--line);}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px;}
+@media (max-width:600px){.home-grid{grid-template-columns:1fr;}}
+
 /* ---- 포트폴리오 프롬프트 ---- */
 .prompt-card{margin-top:22px;}
 .prompt-card h2{font-size:17px;margin:0 0 6px;color:var(--ink-dark);}
@@ -426,7 +481,7 @@ button{
 
 @media print{
   body{background:#fff;}
-  .masthead,.progress,.progress-labels,.print-bar,.nav-row,.prompt-card{display:none !important;}
+  .masthead,.progress,.progress-labels,.print-bar,.nav-row,.prompt-card,.img-preview{display:none !important;}
   .card{border:none;}
   .card.report-frame{border:2px solid var(--ink) !important;}
   .stage{max-width:100%;padding:0;}
@@ -443,8 +498,34 @@ button{
 
 <div class="stage">
 
-  <!-- ========== 커버 ========== -->
-  <section id="screen-cover">
+  <!-- ========== 메인(홈) ========== -->
+  <section id="screen-home">
+    <div class="cover">
+      <div class="gauge">
+        <span class="fill"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <h1>채움 119</h1>
+      <p>채울수록 커지는 내일 — 나를 알아보고, 나만의 진로 리포트를 만들어요.</p>
+    </div>
+    <div class="home-grid">
+      <button class="home-card" onclick="goHolland()">
+        <span class="hc-step">STEP 1</span>
+        <b>홀랜드 검사하기</b>
+        <span class="hc-desc">30문항 · 약 10분<br>나의 흥미유형을 알아보고, 육각형 결과를 이미지로 저장해요.</span>
+        <span class="hc-go">검사 시작 →</span>
+      </button>
+      <button class="home-card" onclick="goReport()">
+        <span class="hc-step">STEP 2</span>
+        <b>리포트 생성하기</b>
+        <span class="hc-desc">워크시트 내용을 옮겨 적으면<br>나만의 진로 리포트와 포트폴리오 프롬프트가 만들어져요.</span>
+        <span class="hc-go">리포트 만들기 →</span>
+      </button>
+    </div>
+    <p class="cover-note" style="margin-top:16px;">홀랜드 검사를 먼저 하면, 리포트 생성에서 검사 결과를 바로 불러올 수 있어요.</p>
+  </section>
+
+  <!-- ========== 커버(리포트 생성 시작) ========== -->
+  <section id="screen-cover" class="hidden">
     <div class="cover">
       <div class="gauge">
         <span class="fill"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
@@ -460,7 +541,8 @@ button{
         <input type="text" id="in-dept" placeholder="예: 조경과 1-2">
       </div>
     </div>
-    <div style="text-align:center;">
+    <div class="actions" style="margin-top:0;">
+      <button class="btn-ghost" onclick="goHome()">← 홈으로</button>
       <button class="btn-primary" onclick="startApp()">채움 시작하기</button>
     </div>
     <p class="cover-note" style="margin-top:14px;">같은 이름으로 다시 들어오면 이전에 쓴 내용을 이어서 볼 수 있어요.</p>
@@ -471,7 +553,7 @@ button{
 
     <div class="masthead">
       <div class="brand">채움 119</div>
-      <div class="who" id="who-line"></div>
+      <div class="mast-right"><button class="btn-home" onclick="goHome()">← 홈</button><div class="who" id="who-line"></div></div>
     </div>
 
     <div class="progress" id="progress-dots"></div>
@@ -506,10 +588,13 @@ button{
       <div class="step-block">
         <span class="step-tag">2단계 · 나를 알기</span>
         <h3 class="step-heading">진로 탐색을 통한 '나' 객관적으로 보기</h3>
-        <p class="step-desc">해당하는 흥미 유형을 골라보세요. 여러 개 골라도 됩니다.</p>
+        <p class="step-desc">홀랜드 간이검사 점수(유형마다 0~10점)를 적어보세요. 점수를 넣는 대로 아래 육각형이 바로 그려져요.</p>
+        <button class="btn-ghost hidden" id="btn-import-hol" style="margin:4px 0 6px;font-size:13px;padding:9px 14px;" onclick="importHolland()"></button>
+        <div class="hol-go"><span>아직 점수가 없나요?</span> <button class="btn-ghost" style="font-size:13px;padding:8px 14px;" onclick="goHolland()">홀랜드 간이검사 하러 가기 (약 10분)</button></div>
 
-        <label class="field">나의 흥미 유형 (복수 선택 가능)</label>
-        <div class="chip-group" id="s2-riasec"></div>
+        <label class="field">나의 흥미유형 검사 점수 <span class="hint">유형마다 0~10점 (다른 검사라면 0~30점까지 입력할 수 있어요)</span></label>
+        <div id="riasec-scores"></div>
+        <div id="radar-preview" class="radar-preview"></div>
 
         <label class="field">나의 강점 (2~3가지)</label>
         <input type="text" data-k="s2_strength" placeholder="예: 손재주가 좋음, 꼼꼼함, 협업을 잘함">
@@ -733,9 +818,76 @@ button{
         <button class="btn-stamp" id="btn-save-img" onclick="saveReportImage()">리포트 이미지로 저장 (PNG)</button>
         <button class="btn-ghost" onclick="window.print()">인쇄 · PDF</button>
       </div>
+      <div class="img-preview hidden" id="img-preview"></div>
     </section>
 
   </div>
+
+  <!-- ========== 홀랜드 간이검사 ========== -->
+  <section id="screen-test" class="hidden">
+    <div class="masthead">
+      <div class="brand">홀랜드 간이검사</div>
+      <div class="mast-right"><button class="btn-home" onclick="goHome()">← 홈</button></div>
+    </div>
+
+    <div class="card" id="t-intro">
+      <div class="chapter-title">홀랜드 흥미유형 간이검사</div>
+      <div class="chapter-sub">나는 어떤 활동에 끌리는 사람일까? · 30문항 · 약 10분</div>
+      <p style="font-size:14px;line-height:1.75;margin:0 0 14px;">정답은 없어요. 지금의 나를 떠올리며 <b>평소 내 모습대로</b> 답해 주세요.<br>각 문항에 <b>아니다(0점) · 보통이다(1점) · 그렇다(2점)</b> 중 하나를 고르면 돼요. 끝나면 6가지 유형별 점수(0~10점)와 육각형 결과가 나와요.</p>
+      <label class="field">이름</label>
+      <input type="text" id="t-name" placeholder="예: 김한페">
+      <label class="field">학과 / 학년-반 <span class="hint">(선택)</span></label>
+      <input type="text" id="t-dept" placeholder="예: 조경과 1-2">
+      <p class="hol-note">이 검사는 수업에서 쓰는 간이검사예요. 직업을 정해 주는 검사가 아니라, <b>오늘의 나</b>를 살펴보는 참고 자료예요. 이전에 하던 검사가 있으면 같은 이름으로 이어서 할 수 있어요.</p>
+      <div class="actions" style="margin-top:14px;">
+        <button class="btn-ghost" onclick="startHolland(true)">처음부터 하기</button>
+        <button class="btn-stamp" onclick="startHolland(false)">검사 시작하기 (이어서 하기)</button>
+      </div>
+    </div>
+
+    <div class="card hidden" id="t-quiz">
+      <div class="t-bar"><div class="t-bar-fill" id="t-bar-fill"></div></div>
+      <div class="t-meta"><span id="t-count"></span><span id="t-page"></span></div>
+      <div id="t-questions"></div>
+      <div class="t-nav">
+        <button class="btn-ghost" id="t-prev" onclick="quizMove(-1)">이전</button>
+        <button class="btn-primary" id="t-next" onclick="quizMove(1)">다음</button>
+      </div>
+    </div>
+
+    <div class="hidden" id="t-result">
+      <div class="hol-frame report-frame" id="hol-frame">
+        <div class="report-frame-inner">
+          <div class="report-head">
+            <div class="report-id" id="hol-id"></div>
+            <div class="report-seal">홀랜드<br>검사</div>
+            <h1>나의 홀랜드 흥미유형 결과</h1>
+            <div class="report-meta" id="hol-meta"></div>
+            <div class="report-sub">HOLLAND INTEREST TEST · 6유형 간이검사 결과</div>
+          </div>
+          <div class="dash-wrap">
+            <div id="hol-radar"></div>
+            <div>
+              <div class="dash-title">유형별 점수 (각 10점 만점)</div>
+              <div id="hol-bars"></div>
+            </div>
+          </div>
+          <div class="report-section">
+            <h2><span class="sec-ico">★</span>나의 대표 흥미유형</h2>
+            <div id="hol-top"></div>
+          </div>
+          <p class="hol-note">여러 유형이 비슷하게 높게 나오는 것은 자연스러워요. 가장 높은 유형 하나보다 <b>높은 두세 개의 조합</b>을 함께 보세요. 이 결과는 간이검사에 답한 <b>오늘의 나</b>를 보여 주는 참고 자료예요. 더 자세히 알고 싶다면 커리어넷(career.go.kr)의 정식 검사도 해 보세요.</p>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn-stamp" id="btn-save-hol" onclick="saveHollandImage()">결과 이미지로 저장 (PNG)</button>
+        <button class="btn-primary" onclick="goReport()">리포트 생성하러 가기</button>
+        <button class="btn-ghost" onclick="goHolland()">다시 검사하기</button>
+        <button class="btn-ghost" onclick="goHome()">← 홈으로</button>
+      </div>
+      <div class="img-preview hidden" id="hol-img-preview"></div>
+    </div>
+  </section>
 </div>
 
 <script>
@@ -802,12 +954,13 @@ function startApp(){
     state = { name, school, dept, chips:{ s2_riasec:[], s4_skills:[], s4_future:[] } };
   }
   state.name = name; state.school = school; state.dept = dept;
+  if(!Array.isArray(state.rs)) state.rs = ["","","","","",""];
 
   document.getElementById("screen-cover").classList.add("hidden");
   document.getElementById("app-body").classList.remove("hidden");
   document.getElementById("who-line").textContent = [name, school, dept].filter(Boolean).join(" · ");
 
-  buildChips("s2-riasec", RIASEC, "s2_riasec");
+  buildRiasecInputs();
   buildChips("s4-skills", SKILLS, "s4_skills");
   buildChips("s4-future", FUTURE, "s4_future");
 
@@ -818,10 +971,11 @@ function startApp(){
     el.addEventListener("input", ()=>{ state[k]=el.value; saveState(); });
     el.addEventListener("change", ()=>{ state[k]=el.value; saveState(); syncEtc(); });
   });
-  applyChipState("s2-riasec", state.chips.s2_riasec);
+  updateRadarPreview();
   applyChipState("s4-skills", state.chips.s4_skills);
   applyChipState("s4-future", state.chips.s4_future);
   syncEtc();
+  updateImportBtn();
 
   renderProgress(1);
 }
@@ -840,6 +994,177 @@ function withEtc(list, etc){
 }
 function industryText(){
   return state.s3_industry === "기타" ? ("기타" + (etcText(state.s3_industry_etc) ? "(" + etcText(state.s3_industry_etc) + ")" : "")) : (state.s3_industry || "");
+}
+
+
+const RCODE = ["R","I","A","S","E","C"];
+function rsNums(){ return RIASEC.map((_,i)=>{ const v=parseFloat((state.rs||[])[i]); return isNaN(v)?0:Math.max(0,Math.min(30,v)); }); }
+function rsFilled(){ return (state.rs||[]).filter(v=>String(v).trim()!=="" && !isNaN(parseFloat(v))).length; }
+function rsName(i){ return RIASEC[i].split("(")[0]; }
+function topIdxOf(n){
+  const order = n.map((v,i)=>[v,i]).sort((a,b)=>b[0]-a[0]);
+  if(order[0][0] <= 0) return [];
+  const th = order[1][0];
+  const top = order.filter(([v])=> v>0 && v>=th).map(([,i])=>i);
+  return top.length > 3 ? [] : top;
+}
+function rsTopIdx(){ return topIdxOf(rsNums()); }
+function rsText(){
+  if(rsFilled()===0) return "";
+  const n = rsNums(), top = rsTopIdx();
+  return RIASEC.map((_,i)=> rsName(i)+" "+n[i]+"점").join(", ") + (top.length ? " (대표: "+top.map(rsName).join("·")+")" : "");
+}
+function rsCodeHtml(){
+  const top = rsTopIdx();
+  if(!top.length) return rsFilled() ? '<div class="rs-code">대표 유형을 가리기 어려워요<small>점수 차이가 거의 없어요</small></div>' : '';
+  const n = rsNums();
+  return '<div class="rs-code">나의 대표 흥미 유형: '+top.map(i=>rsName(i)+"("+RCODE[i]+") "+n[i]+"점").join(" · ")+'<small>홀랜드 코드 '+top.map(i=>RCODE[i]).join("-")+'</small></div>';
+}
+function buildRiasecInputs(){
+  const box = document.getElementById("riasec-scores");
+  box.innerHTML = "";
+  RIASEC.forEach((t,i)=>{
+    const name = t.split("(")[0], desc = (t.split("(")[1]||"").replace(")","");
+    const row = document.createElement("div"); row.className = "rs-row";
+    row.innerHTML = '<div class="rs-name"><b>'+name+'<i>'+RCODE[i]+'</i></b><span>'+desc+'</span></div>';
+    const inp = document.createElement("input");
+    inp.type="number"; inp.min="0"; inp.max="30"; inp.step="1"; inp.inputMode="numeric"; inp.className="rs-input"; inp.placeholder="점수";
+    inp.value = (state.rs && state.rs[i] !== undefined) ? state.rs[i] : "";
+    inp.addEventListener("input", ()=>{
+      let v = inp.value;
+      if(v !== ""){ let x = Math.round(parseFloat(v)); if(isNaN(x)) x = ""; else x = Math.max(0, Math.min(30, x)); if(String(x) !== v){ inp.value = x; } v = String(x); }
+      state.rs[i] = v; saveState(); updateRadarPreview();
+    });
+    row.appendChild(inp); box.appendChild(row);
+  });
+}
+function updateRadarPreview(){
+  const box = document.getElementById("radar-preview"); if(!box) return;
+  box.innerHTML = '<div class="rp-title">내 흥미유형 육각형 (입력하면 바로 바뀌어요)</div>' + buildRadarSVG(rsNums()) + rsCodeHtml();
+}
+
+
+/* ================= 화면 이동 ================= */
+function showScreen(id){
+  ["screen-home","screen-cover","app-body","screen-test"].forEach(x=>{ const el=document.getElementById(x); if(el) el.classList.toggle("hidden", x!==id); });
+  window.scrollTo(0,0);
+}
+function goHome(){ showScreen("screen-home"); }
+function holLast(){ try{ return JSON.parse(localStorage.getItem("career9_holland_last")||"null"); }catch(e){ return null; } }
+function goReport(){
+  const inp = document.getElementById("in-name"), last = holLast();
+  if(inp && !inp.value.trim() && last && last.name) inp.value = last.name;
+  showScreen("screen-cover");
+}
+function updateImportBtn(){
+  const b = document.getElementById("btn-import-hol"); if(!b) return;
+  const last = holLast();
+  if(last && Array.isArray(last.scores) && last.scores.length === 6){
+    b.classList.remove("hidden");
+    b.textContent = "홀랜드 간이검사 결과 불러오기 (" + (last.name || "이름 없음") + " · " + last.date + ")";
+  } else b.classList.add("hidden");
+}
+function importHolland(){
+  const last = holLast(); if(!last) return;
+  state.rs = last.scores.map(v=>String(v)); saveState(); buildRiasecInputs(); updateRadarPreview();
+}
+
+/* ================= 홀랜드 간이검사 (30문항) ================= */
+const HOL = [
+ {name:"현실형",code:"R",line:"손과 몸으로 직접 만들고 다루는 일에서 힘이 나는 유형이에요.",kw:["만들기","고치기","실습","현장"],
+  dept:[["조경과","정원·공원 시공, 식물 식재와 관리 같은 현장 작업"],["식품제조과","제과제빵·식품 제조처럼 손으로 직접 만들어 내는 일"],["자동차기계과","정비와 조립처럼 손으로 문제를 해결하는 일"],["건설시스템과","시공 현장에서 구조물을 직접 세우고 다루는 일"]]},
+ {name:"탐구형",code:"I",line:"궁금한 것을 파고들어 원리를 알아내는 일이 잘 맞는 유형이에요.",kw:["분석","실험","탐구","문제해결"],
+  dept:[["조경과","식물·토양을 관찰하고 생육 환경을 분석하는 일"],["식품제조과","새 레시피를 개발하고 식품 성분·품질을 분석하는 일"],["자동차기계과","고장 원인을 진단하고 구조를 분석하는 일"],["건설시스템과","구조 안전을 검토하고 측량·설계 자료를 분석하는 일"]]},
+ {name:"예술형",code:"A",line:"나만의 아이디어를 표현하고 새로 만드는 일에서 신나는 유형이에요.",kw:["창작","디자인","표현","아이디어"],
+  dept:[["조경과","정원·공간 디자인과 식물 꾸미기"],["식품제조과","디저트 디자인, 플레이팅, 제품 패키지 아이디어"],["자동차기계과","자동차 외관·튜닝 디자인"],["건설시스템과","건축 도면, 인테리어와 공간 설계"]]},
+ {name:"사회형",code:"S",line:"사람을 돕고 함께하는 일에서 보람을 느끼는 유형이에요.",kw:["돕기","가르치기","협력","공감"],
+  dept:[["조경과","원예치료, 공원 이용자 안내와 체험 교육"],["식품제조과","쿠킹클래스 강사, 영양·급식 관련 소통"],["자동차기계과","고객 상담과 차량 상태를 쉽게 설명해 주는 일"],["건설시스템과","현장 안전 교육과 팀원 간 소통·협업"]]},
+ {name:"기업형",code:"E",line:"앞장서서 이끌고 설득하며 일을 벌이는 데 힘이 나는 유형이에요.",kw:["리더십","설득","도전","창업"],
+  dept:[["조경과","조경·원예 사업 창업, 시공 영업과 현장 팀장"],["식품제조과","베이커리·카페 창업, 식품 브랜드 기획과 판매"],["자동차기계과","정비소 운영, 자동차 영업과 서비스센터 관리"],["건설시스템과","현장 관리자(현장소장), 건설 사업 기획"]]},
+ {name:"관습형",code:"C",line:"정리하고 꼼꼼하게 맞추는 일에서 안정감을 느끼는 유형이에요.",kw:["정리","정확성","계획","관리"],
+  dept:[["조경과","공사 공정·자재 관리와 식물 관리 일지 기록"],["식품제조과","위생·품질 관리(HACCP)와 재고 관리"],["자동차기계과","부품·재고 관리와 정비 이력 기록"],["건설시스템과","공정표·서류 관리와 측량 기록 정리"]]},
+];
+const HOL_Q = [
+ ["기계나 도구를 직접 만지며 고치거나 만드는 일이 재미있다.","몸을 움직이며 하는 실습이나 작업이 가만히 앉아 공부하는 것보다 좋다.","식물, 자동차, 건물 같은 실제 물건을 다루는 일에 관심이 있다.","설명서를 보고 물건을 조립하거나 설치해 보는 게 즐겁다.","눈에 보이는 결과물이 완성되면 큰 보람을 느낀다."],
+ ["왜 그런지 궁금한 것은 끝까지 찾아보는 편이다.","실험이나 관찰을 하며 원리를 알아내는 게 재미있다.","복잡한 문제를 차근차근 분석해서 푸는 것이 좋다.","새로운 기술이나 과학 이야기를 찾아보는 것을 좋아한다.","자료를 모아 비교하고 정리해서 결론을 내는 일이 잘 맞는다."],
+ ["그림, 디자인, 글쓰기, 음악 등으로 내 생각을 표현하는 게 좋다.","남과 다른 나만의 아이디어를 떠올리는 일이 즐겁다.","물건이나 공간을 더 예쁘고 멋지게 꾸미는 일에 관심이 있다.","정해진 방법보다 자유롭게 만들어 보는 활동이 더 좋다.","영상, 사진, 요리 플레이팅처럼 보기 좋게 만드는 일이 재미있다."],
+ ["친구나 후배의 고민을 들어주고 도와주는 게 좋다.","다른 사람에게 무언가를 가르쳐 주거나 설명해 주는 일이 즐겁다.","모둠 활동에서 서로 협력하며 함께 해내는 것이 좋다.","봉사활동이나 사람을 돕는 일에 보람을 느낀다.","처음 만난 사람과도 편하게 이야기하는 편이다."],
+ ["모둠에서 앞에 나서서 의견을 정리하고 이끄는 일이 편하다.","다른 사람을 설득해서 내 생각에 공감하게 만드는 게 재미있다.","새로운 일을 계획하고 직접 시작해 보고 싶다.","발표나 대회처럼 경쟁하는 상황에서 더 힘이 난다.","내가 만든 물건이나 아이디어를 팔아 보고 싶은 생각이 있다."],
+ ["자료나 물건을 규칙에 맞게 정리하는 일이 마음 편하다.","계획표를 세워 정해진 순서대로 해내는 것이 좋다.","숫자나 기록을 꼼꼼하게 맞추는 일을 잘한다.","맡은 일은 실수 없이 정확하게 마무리하려고 한다.","규칙과 절차가 분명한 일이 하고 싶다."],
+];
+// 한 쪽(6문항)에 6유형이 하나씩 섞이도록 배열
+const HOL_ITEMS = [];
+for(let k=0;k<5;k++) for(let t=0;t<6;t++) HOL_ITEMS.push({t, text:HOL_Q[t][k]});
+const HOL_PROG = "career9_holland_progress";
+let holAns = Array(30).fill(null), holPage = 0, holName = "", holDept = "";
+
+function showTestPane(id){ ["t-intro","t-quiz","t-result"].forEach(x=>document.getElementById(x).classList.toggle("hidden", x!==id)); window.scrollTo(0,0); }
+function goHolland(){
+  showScreen("screen-test"); showTestPane("t-intro");
+  const n = document.getElementById("t-name"), last = holLast();
+  if(!n.value.trim() && last && last.name) n.value = last.name;
+}
+function saveProgress(){ localStorage.setItem(HOL_PROG, JSON.stringify({name:holName, dept:holDept, ans:holAns})); }
+function startHolland(fresh){
+  const name = document.getElementById("t-name").value.trim();
+  if(!name){ alert("이름을 입력해 주세요."); return; }
+  holName = name; holDept = document.getElementById("t-dept").value.trim();
+  holAns = Array(30).fill(null);
+  if(!fresh){
+    try{ const p = JSON.parse(localStorage.getItem(HOL_PROG)||"null");
+      if(p && p.name===name && Array.isArray(p.ans) && p.ans.length===30) holAns = p.ans; }catch(e){}
+  }
+  const first = holAns.findIndex(v=>v===null);
+  holPage = first<0 ? 4 : Math.floor(first/6);
+  saveProgress(); showTestPane("t-quiz"); renderQuiz();
+}
+function renderQuiz(){
+  const start = holPage*6, box = document.getElementById("t-questions"); box.innerHTML = "";
+  for(let i=start;i<start+6;i++){
+    const card = document.createElement("div"); card.className = "q-card"+(holAns[i]!==null?" done":"");
+    card.innerHTML = '<div class="q-text"><i>Q'+(i+1)+'</i>'+HOL_ITEMS[i].text+'</div>';
+    const opts = document.createElement("div"); opts.className = "q-opts";
+    [["아니다",0],["보통이다",1],["그렇다",2]].forEach(([lab,v])=>{
+      const b = document.createElement("button"); b.className = "q-opt"+(holAns[i]===v?" on":"");
+      b.innerHTML = lab+'<small>'+v+'점</small>'; b.onclick = ()=>{ holAns[i]=v; saveProgress(); renderQuiz(); };
+      opts.appendChild(b);
+    });
+    card.appendChild(opts); box.appendChild(card);
+  }
+  const done = holAns.filter(v=>v!==null).length, pageDone = holAns.slice(start,start+6).every(v=>v!==null);
+  document.getElementById("t-bar-fill").style.width = (done/30*100)+"%";
+  document.getElementById("t-count").textContent = done+" / 30 문항 응답";
+  document.getElementById("t-page").textContent = (holPage+1)+" / 5 쪽";
+  document.getElementById("t-prev").disabled = holPage===0;
+  const nx = document.getElementById("t-next");
+  nx.textContent = holPage===4 ? "결과 보기" : "다음";
+  nx.disabled = !pageDone;
+}
+function quizMove(d){
+  if(d>0 && holPage===4){ finishHolland(); return; }
+  holPage = Math.max(0, Math.min(4, holPage+d)); renderQuiz(); window.scrollTo(0,0);
+}
+function finishHolland(){
+  const scores = [0,0,0,0,0,0];
+  HOL_ITEMS.forEach((it,i)=>{ scores[it.t] += (holAns[i]||0); });
+  const date = new Date().toLocaleDateString("ko-KR");
+  localStorage.setItem("career9_holland_last", JSON.stringify({name:holName, dept:holDept, date, scores}));
+  localStorage.removeItem(HOL_PROG);
+  showHollandResult(scores, holName, holDept, date);
+}
+function showHollandResult(scores, name, dept, date){
+  const top = topIdxOf(scores);
+  document.getElementById("hol-id").textContent = "TEST NO. " + new Date().toISOString().slice(0,10).replace(/-/g,"");
+  document.getElementById("hol-meta").textContent = [name, dept, date].filter(Boolean).join(" · ");
+  document.getElementById("hol-radar").innerHTML = buildRadarSVG(scores, top, 10) +
+    (top.length ? '<div class="rs-code">나의 대표 흥미유형: '+top.map(i=>HOL[i].name+"("+HOL[i].code+") "+scores[i]+"점").join(" · ")+'<small>홀랜드 코드 '+top.map(i=>HOL[i].code).join("-")+'</small></div>' : '');
+  document.getElementById("hol-bars").innerHTML = scores.map((v,i)=>'<div class="hbar-row"><div class="hbar-label"><span>'+HOL[i].name+' '+HOL[i].code+'</span><span>'+v+' / 10</span></div><div class="hbar-track"><div class="hbar-fill" style="width:'+(v/10*100)+'%"></div></div></div>').join("");
+  document.getElementById("hol-top").innerHTML = top.length ? top.map(i=>{
+    const h = HOL[i];
+    return '<div class="type-card"><h3>'+h.name+'<em>'+h.code+' · '+scores[i]+'점</em></h3><p>'+h.line+'</p><div class="kw">'+h.kw.map(k=>'<span>'+k+'</span>').join("")+'</div><ul>'+h.dept.map(d=>'<li><b>'+d[0]+'</b> — '+d[1]+'</li>').join("")+'</ul></div>';
+  }).join("") : '<div class="type-card"><h3>대표 유형을 가리기 어려워요</h3><p>점수 차이가 거의 없어요. 여러 분야에 두루 흥미가 있다는 뜻일 수 있어요. 점수가 높은 유형부터 하나씩, 관심이 가는 활동을 떠올려 보세요.</p></div>';
+  document.getElementById("hol-img-preview").classList.add("hidden");
+  showTestPane("t-result");
 }
 
 function applyChipState(containerId, arr){
@@ -881,57 +1206,59 @@ function fmt(v, placeholder){
   return v;
 }
 
-function buildRadarSVG(selected){
+function buildRadarSVG(nums, topOverride, axisOverride){
   const labels = RIASEC.map(t => t.split("(")[0]);
   const n = labels.length;
-  const cx = 130, cy = 122, R = 66;
+  const cx = 170, cy = 158, R = 100;
+  const mx = Math.max(...nums);
+  const axisMax = axisOverride || Math.max(5, Math.ceil(mx/5)*5);
+  const top = topOverride || rsTopIdx();
   const angle = i => -Math.PI/2 + i * (2*Math.PI/n);
+  const pt = (i, r) => [cx + r*Math.cos(angle(i)), cy + r*Math.sin(angle(i))];
 
-  const grid = [0.33, 0.66, 1].map(l => {
-    const pts = labels.map((_, i) => {
-      const a = angle(i), r = R * l;
-      return (cx + r*Math.cos(a)).toFixed(1) + "," + (cy + r*Math.sin(a)).toFixed(1);
-    }).join(" ");
-    return `<polygon points="${pts}" fill="none" stroke="#DCD4C0" stroke-width="1"/>`;
-  }).join("");
+  let grid = "";
+  for(let l=5; l>=1; l--){
+    const pts = labels.map((_, i) => pt(i, R*l/5).map(v=>v.toFixed(1)).join(",")).join(" ");
+    grid += `<polygon points="${pts}" fill="${l===5?"#FFFFFF":"none"}" stroke="${l===5?"#B9AE95":"#DCD4C0"}" stroke-width="${l===5?1.6:1}"/>`;
+  }
+  const axes = labels.map((_, i) => { const [x,y]=pt(i,R); return `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#DCD4C0" stroke-width="1"/>`; }).join("");
+  let ringLabels = "";
+  for(let l=1; l<=5; l++){ ringLabels += `<text x="${cx+4}" y="${(cy-R*l/5-2).toFixed(1)}" font-size="8.5" fill="#9a927f">${Math.round(axisMax*l/5)}</text>`; }
 
-  const axes = labels.map((_, i) => {
-    const a = angle(i), x = cx + R*Math.cos(a), y = cy + R*Math.sin(a);
-    return `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#DCD4C0" stroke-width="1"/>`;
-  }).join("");
-
-  const values = RIASEC.map(t => selected.includes(t) ? 1 : 0.2);
-  const dataPts = values.map((v, i) => {
-    const a = angle(i), r = R * v;
-    return (cx + r*Math.cos(a)).toFixed(1) + "," + (cy + r*Math.sin(a)).toFixed(1);
-  }).join(" ");
-
-  const dots = values.map((v, i) => {
-    const a = angle(i), r = R * v;
-    const on = v === 1;
-    return `<circle cx="${(cx+r*Math.cos(a)).toFixed(1)}" cy="${(cy+r*Math.sin(a)).toFixed(1)}" r="${on?4:2.5}" fill="${on?"#B23A2E":"#C9BFA8"}"/>`;
-  }).join("");
+  let data = "";
+  if(mx > 0){
+    const dataPts = nums.map((v,i)=> pt(i, R*v/axisMax).map(x=>x.toFixed(1)).join(",")).join(" ");
+    data += `<polygon points="${dataPts}" fill="#B23A2E" fill-opacity="0.30" stroke="#B23A2E" stroke-width="3" stroke-linejoin="round"/>`;
+    nums.forEach((v,i)=>{
+      const on = top.includes(i);
+      const [x,y] = pt(i, R*v/axisMax);
+      data += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${on?6:4}" fill="${on?"#B23A2E":"#1F3A5F"}" stroke="#fff" stroke-width="1.5"/>`;
+      if(v>0){
+        const [tx,ty] = pt(i, R*v/axisMax + 15);
+        data += `<text x="${tx.toFixed(1)}" y="${ty.toFixed(1)}" font-size="${on?14:12}" font-weight="800" fill="${on?"#B23A2E":"#1F3A5F"}" text-anchor="middle" dominant-baseline="middle">${v}</text>`;
+      }
+    });
+  } else {
+    data = `<text x="${cx}" y="${cy}" font-size="13" fill="#9a927f" text-anchor="middle" dominant-baseline="middle">점수를 입력하면</text><text x="${cx}" y="${cy+18}" font-size="13" fill="#9a927f" text-anchor="middle" dominant-baseline="middle">육각형이 그려져요</text>`;
+  }
 
   const labelEls = labels.map((lab, i) => {
-    const a = angle(i), lr = R + 30;
-    const x = cx + lr*Math.cos(a), y = cy + lr*Math.sin(a);
-    const cosv = Math.cos(a);
+    const [x,y] = pt(i, R + 34);
+    const cosv = Math.cos(angle(i));
     const anchor = Math.abs(cosv) < 0.3 ? "middle" : (cosv > 0 ? "start" : "end");
-    const on = selected.includes(RIASEC[i]);
-    return `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" font-size="11" fill="${on?"#B23A2E":"#6b6559"}" text-anchor="${anchor}" dominant-baseline="middle" font-weight="${on?800:600}">${lab}</text>`;
+    const on = top.includes(i);
+    return `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" font-size="${on?14:12.5}" fill="${on?"#B23A2E":"#4b463c"}" text-anchor="${anchor}" dominant-baseline="middle" font-weight="${on?800:700}">${lab} <tspan font-size="10.5" font-family="monospace" fill="#9a927f">${RCODE[i]}</tspan></text>`;
   }).join("");
 
-  return `<svg viewBox="0 0 260 244" style="width:100%;height:auto;max-width:250px;display:block;margin:0 auto;">
-    ${grid}${axes}
-    <polygon points="${dataPts}" fill="#B23A2E" fill-opacity="0.22" stroke="#B23A2E" stroke-width="2"/>
-    ${dots}${labelEls}
+  return `<svg viewBox="0 0 340 316" style="width:100%;height:auto;max-width:340px;display:block;margin:0 auto;">
+    ${grid}${axes}${ringLabels}${data}${labelEls}
   </svg>`;
 }
 
 function buildBars(){
   const goals = [state.s5_c1, state.s5_c2, state.s5_c3].filter(v=>v && v.trim()).length;
   const rows = [
-    ["나의 흥미 유형", state.chips.s2_riasec.length, 6],
+    ["흥미유형 점수 입력", rsFilled(), 6],
     ["목표기업 수", goals, 3],
     ["배우고 싶은 기술", state.chips.s4_skills.length, 9],
     ["체험 희망 미래기술", state.chips.s4_future.length, 6],
@@ -966,7 +1293,7 @@ function dataBlock(){
 - 우리 학교 자랑거리: ${pv(state.s1_pride)}
 
 ■ 2단계 나를 알기
-- 나의 흥미 유형(6유형 중 선택): ${state.chips.s2_riasec.length ? state.chips.s2_riasec.join(", ") : "(작성하지 않음)"}
+- 나의 흥미유형 검사 점수: ${rsFilled() ? RIASEC.map((t,i)=>`${rsName(i)}(${RCODE[i]}) ${rsNums()[i]}점`).join(", ") + (rsTopIdx().length ? " / 대표 유형: " + rsTopIdx().map(rsName).join(", ") : "") : "(작성하지 않음)"}
 - 나의 강점: ${pv(state.s2_strength)}
 - 요즘 진로 고민: ${pv(state.s2_worry)}
 
@@ -1012,7 +1339,7 @@ function buildPortfolioPrompt(mode){
 [디자인]
 - A4 세로 비율(약 3:4)의 한 장짜리 인포그래픽 포스터
 - 배경은 연한 베이지색 단색, 포인트 색은 진한 남색과 붉은색 두 가지만 사용 (그라데이션, 번쩍이는 효과 금지)
-- 위에서 아래 순서: ① 제목과 이름·학교·학과 → ② 나의 흥미 유형과 강점(아이콘 + 짧은 키워드) → ③ 관심 산업과 목표기업 3곳 카드 → ④ 1학년·2학년·3학년 준비 계획 타임라인 → ⑤ 자격증·동아리 체크리스트 → ⑥ 맨 아래 1년 뒤 나의 다짐(크게)
+- 위에서 아래 순서: ① 제목과 이름·학교·학과 → ② 흥미유형 6각형(레이더) 차트 — 아래 점수를 그대로 반영하고 점수가 높은 유형을 붉게 강조 — 와 강점 키워드 → ③ 관심 산업과 목표기업 3곳 카드 → ④ 1학년·2학년·3학년 준비 계획 타임라인 → ⑤ 자격증·동아리 체크리스트 → ⑥ 맨 아래 1년 뒤 나의 다짐(크게)
 - 아이콘은 단순한 선 아이콘 스타일로 통일
 - 이미지 속 글자는 한글로 정확하게 써줘. 글자가 깨질 것 같으면 글자 수를 더 줄여줘.
 
@@ -1034,7 +1361,7 @@ ${dataBlock()}`;
 - 위에서 아래 순서로 구성
   1) 머리말: '채움 119 · 나의 진로 포트폴리오', 이름·학교·학과
   2) 9단계 진행 띠: 1~9번 동그라미를 가로로 나열하고 내가 적은 단계는 붉은색으로 채우기
-  3) 나의 흥미 유형 6가지(현실·탐구·예술·사회·기업·관습)를 막대 6개로 표시 (내가 고른 유형은 길고 붉게, 나머지는 짧고 회색)
+  3) 흥미유형 검사 결과: 아래 '흥미유형 검사 점수'를 그대로 써서 6각형(레이더) 차트를 SVG로 그려줘. 꼭짓점마다 유형 이름과 점수 숫자를 표시하고, 점수가 가장 높은 유형 1~2개는 붉은색으로 크게 강조해줘. 차트 아래에 '나의 대표 유형'을 한 줄로 써줘.
   4) 나의 강점 / 관심 산업 / 배우고 싶은 기술을 키워드 칩으로 표시
   5) 목표기업 3곳을 카드 3장으로 (기업명 + 선택 이유 한 줄)
   6) 1학년 → 2학년 → 3학년 준비 계획을 화살표 타임라인으로 (자격증, 동아리·방과후 포함)
@@ -1072,22 +1399,42 @@ function copyPrompt(){
 }
 
 
-function saveReportImage(){
-  const el = document.querySelector(".report-frame");
-  const btn = document.getElementById("btn-save-img");
-  if(typeof html2canvas === "undefined"){ alert("이미지 저장 기능을 불러오지 못했어요. 인쇄 · PDF 버튼을 이용해 주세요."); return; }
+async function captureToPng(el, filename, btn, pvId){
+  if(typeof html2canvas === "undefined"){ alert("이미지 저장 기능을 불러오지 못했어요."); return; }
   const old = btn.textContent; btn.textContent = "이미지 만드는 중..."; btn.disabled = true;
-  window.scrollTo(0,0);
-  html2canvas(el, { scale: 2, backgroundColor: "#FBF9F4", useCORS: true, scrollX: 0, scrollY: 0 }).then(canvas=>{
-    canvas.toBlob(blob=>{
-      const a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
-      a.download = "채움119_리포트_" + (state.name || "학생") + ".png";
-      document.body.appendChild(a); a.click(); a.remove();
-      setTimeout(()=>URL.revokeObjectURL(a.href), 2000);
-      btn.textContent = old; btn.disabled = false;
-    }, "image/png");
-  }).catch(()=>{ btn.textContent = old; btn.disabled = false; alert("이미지 저장에 실패했어요. 인쇄 · PDF 버튼을 이용해 주세요."); });
+  let wrap = null;
+  try{
+    window.scrollTo(0,0);
+    await new Promise(r=>setTimeout(r,200));
+    if(document.fonts && document.fonts.ready){ try{ await document.fonts.ready; }catch(e){} }
+    const W = 860, PAD = 28;
+    wrap = document.createElement("div");
+    wrap.style.cssText = "position:absolute;left:0;top:0;width:"+W+"px;padding:"+PAD+"px "+PAD+"px "+(PAD+32)+"px;background:#EFEAE0;box-sizing:border-box;z-index:-1;";
+    const clone = el.cloneNode(true);
+    clone.style.width = "100%"; clone.style.maxWidth = "none"; clone.style.margin = "0";
+    wrap.appendChild(clone); document.body.appendChild(wrap);
+    await new Promise(r=>setTimeout(r,120));
+    const w = wrap.offsetWidth, h = wrap.offsetHeight;
+    const scale = Math.min(2, Math.sqrt(12000000/(w*h)));
+    const canvas = await html2canvas(wrap, { scale, backgroundColor:"#EFEAE0", useCORS:true, scrollX:0, scrollY:0, windowWidth:1000, windowHeight:Math.max(h,900) });
+    const dataUrl = canvas.toDataURL("image/png");
+    const a = document.createElement("a"); a.href = dataUrl; a.download = filename;
+    document.body.appendChild(a); a.click(); a.remove();
+    const pv = document.getElementById(pvId);
+    pv.innerHTML = '<p><b>이미지가 만들어졌어요.</b> 저장이 자동으로 안 되면 아래 그림을 길게 누르거나(오른쪽 클릭) <b>이미지 저장</b>을 눌러 보관하세요.</p><img alt="결과 이미지" src="'+dataUrl+'">';
+    pv.classList.remove("hidden");
+  }catch(e){
+    alert("이미지 저장에 실패했어요. 다시 한 번 눌러 주세요.");
+  }finally{
+    if(wrap && wrap.parentNode) wrap.parentNode.removeChild(wrap);
+    btn.textContent = old; btn.disabled = false;
+  }
+}
+function saveReportImage(){
+  return captureToPng(document.querySelector("#screen-report .report-frame"), "채움119_리포트_" + (state.name || "학생") + ".png", document.getElementById("btn-save-img"), "img-preview");
+}
+function saveHollandImage(){
+  return captureToPng(document.getElementById("hol-frame"), "홀랜드검사결과_" + (holName || "학생") + ".png", document.getElementById("btn-save-hol"), "hol-img-preview");
 }
 
 function showReport(){
@@ -1113,7 +1460,7 @@ function showReport(){
     "REPORT NO. " + new Date().toISOString().slice(0,10).replace(/-/g,"");
 
   // 통계 대시보드: 레이더차트 + 막대
-  document.getElementById("radar-chart").innerHTML = buildRadarSVG(state.chips.s2_riasec);
+  document.getElementById("radar-chart").innerHTML = buildRadarSVG(rsNums()) + rsCodeHtml();
   document.getElementById("report-bars").innerHTML = buildBars();
 
   // 채움 완성도
@@ -1121,8 +1468,8 @@ function showReport(){
     "s3_industry","s3_company","s3_talent","s5_c1","s5_r1","s5_c2","s5_r2","s5_c3","s5_r3",
     "s6_need","s6_plan","s7_activity","s7_cert_plan","s8_visit","s8_check","s9_vow","s9_esteem","s9_feeling"];
   const filledText = textKeys.filter(k => state[k] && String(state[k]).trim()).length;
-  const chipTotal = state.chips.s2_riasec.length + state.chips.s4_skills.length + state.chips.s4_future.length;
-  const filledCount = filledText + (chipTotal > 0 ? Math.min(chipTotal,3) : 0);
+  const chipPts = (rsFilled()>0?1:0) + (state.chips.s4_skills.length>0?1:0) + (state.chips.s4_future.length>0?1:0);
+  const filledCount = filledText + chipPts;
   const totalCount = textKeys.length + 3;
   const pct = Math.round((filledCount / totalCount) * 100);
   document.getElementById("fillbar-fill").style.width = pct + "%";
@@ -1131,7 +1478,7 @@ function showReport(){
   // 관심 키워드 클라우드
   const kwBox = document.getElementById("report-keywords");
   const keywords = [
-    ...state.chips.s2_riasec, ...withEtc(state.chips.s4_skills, state.s4_skills_etc), ...withEtc(state.chips.s4_future, state.s4_future_etc),
+    ...rsTopIdx().map(i=>rsName(i)+" "+rsNums()[i]+"점"), ...withEtc(state.chips.s4_skills, state.s4_skills_etc), ...withEtc(state.chips.s4_future, state.s4_future_etc),
     industryText(), state.s3_company
   ].filter(v => v && String(v).trim());
   kwBox.innerHTML = keywords.length
@@ -1143,7 +1490,7 @@ function showReport(){
     <div class="report-item"><b>방과후 프로그램</b> — ${fmt(state.s1_afterschool)}</div>
     <div class="report-item"><b>취득 희망 자격증</b> — ${fmt(state.s1_cert)}</div>
     <div class="report-item"><b>학교 자랑거리</b> — ${fmt(state.s1_pride)}</div>
-    <div class="report-item"><b>나의 흥미 유형</b> — ${fmt(state.chips.s2_riasec.join(", "))}</div>
+    <div class="report-item"><b>나의 흥미유형 점수</b> — ${fmt(rsText())}</div>
     <div class="report-item"><b>나의 강점</b> — ${fmt(state.s2_strength)}</div>
     <div class="report-item"><b>진로 고민</b> — ${fmt(state.s2_worry)}</div>
   `;
